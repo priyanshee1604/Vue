@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- when we load this vue libaray we get access to vue object 
+         this vue object has a method called createApp used to create vue app-->
+    </head>
+    <body>
+        <div id="app">
+            <h2>I am the template.</h2>
+            <p>{{ title }}, {{author}}, {{age}} </p>
+            <!-- template for the component app, this template
+             output dynamic data.  -->
+             <button v-on:click="age++">Increase Age</button>
+             <button @click="age--">Decrease Age</button>
+             <!-- we dont need culry braces inside directive when we use diff directives  -->
+             <!-- v-on is a directive, it allows us to react to diff 
+              types of events.
+              :click == type of the event we want to react to.
+              ="" js code that runs when user clicks on it -->
+            
+            <!-- you can increase the age in the template 
+             it self as we have access to the age property or
+             form inside the components -->
+
+             <!-- SHORT HAND v-on:click = @click -->
+
+            <div @click="changeTitle('new title form template.')">Change the title.</div>
+            <!-- do not invoke it just reference it. -->
+        </div>
+
+        <p><!-- do not control here --></p>
+    
+        <!-- <script src="./one.js" async defer></script> -->
+        <!-- <script src="./two.js"></script> -->
+        <script src="/clickevent.js"></script>
+
+    </body>
+</html>
