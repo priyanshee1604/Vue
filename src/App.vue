@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CountCmp :message="messagetoP"/>
+  <PropsCmp :message="messagetoProps"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
+import CountCmp from './components/CountCmp.vue';
+import PropsCmp from './components/PropsCmp.vue';
+export default ({
   components: {
-    HelloWorld
+    CountCmp,
+    PropsCmp
+  },
+  data(){
+    return{
+      messagetoP:"Learning to use Props, message from parent",
+      messagetoProps:"message for PropsCmp, from parent app."
+    }
   }
-}
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
